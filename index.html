@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <header>
+            <a href="#" class="logo">Water.</a>
+            <div class="toggle" onclick="menuToggle()"></div>
+        </header>
+        <div class="first"></div>
+        <div class="content">
+            <h2>Hapiness...<br><span>Have an awesome day</span></h2>
+        </div>
+        <video src="images/video.mp4" autoplay muted loop></video>
+        <ul class="ul-one">
+            <li style="--i:1"><a href="">Facebook</a></li>
+            <li style="--i:2"><a href="">Twitter</a></li>
+            <li style="--i:3"><a href="">Instagram</a></li>
+        </ul>
+        <ul class="navigate">
+            <li style="--i:1"><a href="#">Home</a></li>
+            <li style="--i:2"><a href="#">About</a></li>
+            <li style="--i:2"><a href="#">Service</a></li>
+            <li style="--i:4"><a href="#">Contact</a></li>
+        </ul>
+    </section>
+    <script type="text/javascript">
+        function menuToggle(){
+            const toggleMenu = document.querySelector('.toggle');
+            const section = document.querySelector('section');
+            toggleMenu.classList.toggle('active');
+            section.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

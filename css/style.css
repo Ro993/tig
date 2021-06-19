@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+script:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 40px 100px;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content:space-between ;
+    align-items: center;
+}
+header .logo{
+    position: relative;
+    font-size: 2em;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+    transition: 7s;
+}
+header .toggle{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: url(../images/menu.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size: 30px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .toggle:before{
+    content: 'Menu';
+    position: absolute;
+    right: 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    padding: 2px 5px;
+    background: white;
+    color: #111;
+}
+header .toggle.active{
+    background: url(../images/close.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-size: 25px;
+}
+header .toggle.active:before{
+    content: 'Close';
+}
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+section video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.first{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 1;
+    backdrop-filter: blur(15px);
+    box-shadow: 10px 0 15px rgba(0,0,0,0.5);
+    transition: 0.5s;
+    transition-delay: 1s;
+}
+section.active .first{
+    width: 100%;
+    backdrop-filter: blur(20px);
+    transition-delay: 0s;
+}
+section .content{
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    transition-delay: 1s;
+}
+section .content h2{
+    position: relative;
+    color: white;
+    font-size: 10vw;
+    line-height: 0.55em;
+    text-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    font-family: 'Dancing Script',cursive;
+}
+section.active .content{
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-200px);
+    transition-delay: 0s;
+}
+section .content h2 span{
+    font-size: 0.2em;
+    font-weight: 300;
+    letter-spacing: 5px;
+    color: #111;
+    background: #fff;
+    padding: 0 10px;
+    text-shadow: 0 5px 5px rgba(0,0,0,0);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    text-transform: uppercase;
+}
+section .ul-one{
+    position:absolute;
+    bottom: 40px;
+    right: 100px;
+    display: flex;
+    z-index: 100;
+}
+section .ul-one li{
+    list-style: none;
+    margin: 5px;
+    padding: 0 6px;
+    background: white;
+    transition: .5s;
+    transition-delay: calc(0.2s * var(--i));
+}
+section.active .ul-one li {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100px);
+}
+section .ul-one li a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 12px;
+    text-transform: uppercase ;
+}
+section .navigate{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+}
+section .navigate li{
+    list-style: none;
+    text-align: center;
+    margin: 15px 0;
+}
+section .navigate li{
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    transform: translateX(200px);
+    transition-delay: calc(0.1s * var(--i));
+}
+section.active .navigate li{
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px);   
+}
+section .navigate li a{
+    text-decoration: none;
+    color: black;
+    font-weight: 300;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: white;
+    display: inline-block;
+}
+section .navigate li a:hover{
+    background: #111;
+    color: #fff;
+    letter-spacing: 10px;
+    text-transform: lowercase;
+}
+@media (max-width:900px){
+    header{
+        padding: 20px;
+    }
+    section .ul-one{
+        bottom: 20px;
+        right: 20px;
+    }
+}
